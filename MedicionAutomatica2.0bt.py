@@ -53,6 +53,7 @@ for i in range(0,n):
     paso(0.5)
     time.sleep(0.7)
 
+print("puto")
 out.close()
 volt.reset()
 res.reset()
