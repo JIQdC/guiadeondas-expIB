@@ -4,7 +4,7 @@ import time
 import numpy as np 
 import serial
 
-port="/dev/ttyUSB1"
+port="/dev/ttyUSB0"
 arduino=serial.Serial(port,9600)
 
 #deteccion de multimetros
