@@ -32,7 +32,7 @@ path="MedicionAutomatica1.0.csv"
 out=open(path,'w')
 
 n=450 #nro de puntos a medir
-prom=3 #promedios 
+prom=4 #promedios 
 
 r=np.zeros(n)
 v=np.zeros(n)
@@ -51,7 +51,7 @@ for i in range(0,n):
     print("%d\t%.6f\t%.6f\n" % (i,r[i],v[i]))
     out.write("%.6f\t%.6f\n" % (r[i],v[i]))
     paso(0.5)
-    time.sleep(0.4)
+    time.sleep(0.7)
 
 out.close()
 volt.reset()
