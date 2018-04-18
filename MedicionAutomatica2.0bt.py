@@ -34,26 +34,29 @@ out=open(path,'w')
 n=450 #nro de puntos a medir
 prom=4 #promedios 
 
+#inicializo vectores de resistencia y voltaje
 r=np.zeros(n)
 v=np.zeros(n)
 
-volt.voltIntTime(2)
+volt.voltDCIntTime(2)
 res.resistIntTime(2)
 
-out.write("R\tV\n")
+out.write("R,V\n")
 print("i\tR\tV\n")
 for i in range(0,n):
+    #tomo prom mediciones de resistencia y voltaje
     for j in range(0,prom):
         r[i]=r[i]+res.resist()
         v[i]=v[i]+volt.voltDC()
+    #tomo los promedios de las mediciones
     r[i]=r[i]/prom
     v[i]=v[i]/prom
+    #imprimo en pantalla y en el archivo
     print("%d\t%.6f\t%.6f\n" % (i,r[i],v[i]))
-    out.write("%.6f\t%.6f\n" % (r[i],v[i]))
+    out.write("%.6f,%.6f\n" % (r[i],v[i]))
     paso(0.5)
     time.sleep(0.7)
 
-print("puto")
 out.close()
 volt.reset()
 res.reset()

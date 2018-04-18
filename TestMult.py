@@ -19,6 +19,7 @@ else:
     pos=instr1
 
 print(pos.resist())
-pos.instr.write("SENS:RES:NPLC 2")
+pos.instr.write(":MEAS:RES:RANG?")
 time.sleep(3)
+print(pos.instr.read())
 pos.reset()
